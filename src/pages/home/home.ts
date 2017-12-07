@@ -22,7 +22,7 @@ export class HomePage {
   loadUsers(){
     return this.usersService.getUsers().subscribe((response:Response)=>{
       this.users=response.json();
-      console.log(this.users)
+      //console.log(this.users)
     })
   }
   slice(element,index,array){
@@ -45,7 +45,7 @@ export class HomePage {
     this.loadUsers();
     this.loadPhotos();
     }
-  userSelected(){
-    this.navCtrl.push(UserPage)
+  userSelected(user,photo){
+    this.navCtrl.push(UserPage,{userInfo:user,userPhoto:photo})
   }
 }

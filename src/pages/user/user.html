@@ -18,7 +18,44 @@
         </ion-navbar>
     
     </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                    <ion-card >
+                        <img src="{{userPhoto}}"/>
 
+                    <div class="card-title">
+                      <h1>{{user.username}}</h1>
+                         
+                    </div>
+                     <div class="card-subtitle">
+                       {{user.name}}
+                       <br>
+                       {{user.email}}
+                       <br>
+                       {{user.address.street}}
+                       <!-- <p>{{user.email}}</p>
+                       <p>{{user.address.street}}</p> -->
+                      
+                    </div> 
+                    </ion-card> 
+                    <ion-card>
+                        <ion-card-header>
+                          Photos  <ion-icon name="add" (click)="show()" float-right></ion-icon>
+                        </ion-card-header>
+                        <ion-card-content *ngIf="this.selected">
+                            <ion-card *ngFor="let photo of this.photos;let i=index">
+                               <ion-card-content *ngFor="let p of photo ; let j =index">
+                                  <img src="{{p.thumbnailUrl}}" alt="https://www.jqueryscript.net/images/jQuery-Ajax-Loading-Overlay-with-Loading-Text-Spinner-Plugin.jpg" (click)="selectedPhoto(p)"/>
+                              </ion-card-content> 
+                            </ion-card>
+                        </ion-card-content>
+                    </ion-card>
+                
+            </ion-col>
+                       
+        </ion-row>
+    </ion-grid>
 
-  user works
+  
 </ion-content>

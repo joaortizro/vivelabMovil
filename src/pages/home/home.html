@@ -31,10 +31,9 @@
             <ion-col>
                     <ion-card *ngFor="let user of this.users ; let i =index">
                         <img src="{{this.user_photo[i]}}"/>
-                        <!-- {{user.name}} -->
-                        <!-- {{user.address.street}} -->
+
                     <div class="card-title">{{user.name}}
-                        <ion-icon name="add-circle" (click)="userSelected()" ></ion-icon> 
+                        <ion-icon name="add-circle" (click)="userSelected(user,this.user_photo[i])" ></ion-icon> 
                         </div>
                      <div class="card-subtitle">{{user.address.street}}</div> 
                     </ion-card> 
